@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+.container {
+  font-family: quicksand, sans-serif;
+  text-align: center;
+  background-color: #fcfcfc;
+  color: #333333;
+}
+
+.selection-btn {
+  text-align: center;
+  display: inline-block;
+  width: 20%;
+  min-width: 6.6em;
+/*   max-width: 20em; */
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 0.5em;
+  cursor: pointer;
+  box-shadow: 0 0.05em 0.1em -0.11em #000;
+  transition: box-shadow 200ms, font-size 400ms, width 400ms;
+}
+
+.selection-btn:hover {
+  box-shadow: 0 0.4em 0.5em -0.5em #000;
+}
+
+.selection-input:checked + .selection-btn {
+  box-shadow: 0 0.4em 0.5em -0.5em #000;
+  font-size: 1.5em;
+  cursor: default;
+  width: 40%;
+  font-weight: bolder;
+}
+
+header {
+  margin-top: 2em;
+  padding: 2em 0.5em;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 1.8em;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.portfolio-item {
+  min-width: 15em;
+  max-width: 33em;
+  height: 15em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  margin: 0.5em;
+  flex: 1;
+  flex-basis: 20%;
+  background-size: 100%;
+  background-position: center;
+  transition: background-size 0.5s;
+  background-repeat: no-repeat;
+  cursor: default;
+}
+
+.portfolio-item .title {
+  padding: 0.2em 0.5em;
+  line-height: 1.7em;
+  background-color: #fff;
+  box-shadow: 0.05em 0.05em 1em #000;
+  color: #000;
+  font-weight: bolder;
+  min-width: 7em;
+  border: 0.2em solid transparent;
+  background-clip: border-box;
+  transition: opacity 0.1s;
+}
+
+.portfolio-item .link {
+  position: absolute;
+  opacity: 0;
+  align-self: center;
+  border: 0.2em solid;
+  transition: background-color 0.3s;
+}
+
+.portfolio-item .link:hover {
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+}
+
+.portfolio-item:hover {
+  background-size: 120%;
+}
+
+.portfolio-item:hover .title {
+  opacity: 0;
+}
+
+.portfolio-item:hover .link {
+  opacity: 1;
+}
+
+.selection-input {
+  display: none;
+}
+
+.page-section {
+  overflow: hidden;
+}
+
+.info-container .info-text {
+  padding: 0.1em;
+  display: block;
+  line-height: 1.5em;
+}
+
+a.link {
+  color: inherit;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+.section-content {
+  padding: 2em 0.5em;
+  margin: auto;
+}
+
+.section-content:before {
+  content: '\02193';
+  color: #555;
+  font-size: 3em;
+  position: relative;
+  top: -0.5em;
+}
+
+.section-heading {
+  font-size: 2.1em;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+}
+
+.para {
+  line-height: 2em;
+  margin: 1em auto;
+  text-align: justify;
+  font-size: 1.3em;
+  padding: 0.5em;
+  font-weight: 500;
+  max-width: 37em;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 60em;
+  margin: auto;
+}
+
+.grid-item {
+  border: 0.1em solid #999;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  max-width: 30em;
+  min-width: 15em;
+  flex-grow: 1;
+  flex-basis: 20%;
+}
+
+.grid-title {
+  font-weight: bolder;
+  font-size: 1.3em;
+  padding-bottom: 0.3em;
+  border-bottom: 0.1em solid #999;
+  margin: 0.5em auto;
+}
+
+.grid-info {
+  font-weight: 500;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+.list {
+  list-style: circle;
+  text-align: justify;
+  font-weight: 500;
+  font-size: 1.15em;
+  line-height: 1.7em;
+  padding: 0 2em;
+  max-width: 50em;
+  margin: auto;
+}
+
+.list a {
+  text-decoration: underline;
+}
+
+footer {
+  padding: 2em 0.5em;
+  box-shadow: 0 -0.01em #000;
+}
+
+footer p {
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+
+@media (min-width: 576px) {
+  header {
+    padding: 3em 0.5em;
+  }
+  .page-heading {
+    font-size: 2.7em;
+  }
+  .portfolio-container {
+    padding: 2em;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-content {
+    font-size: 0.8em;
+  }
+}
+
+.portfolio-content,
+.resume-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.7s;
+  position: absolute;
+  z-index: -1;
+}
+
+#PortfolioSelect:checked ~ * .portfolio-content,
+#ResumeSelect:checked ~ * .resume-content {
+  max-height: unset;
+  opacity: 1;
+  position: static;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: #ddd;
+}
